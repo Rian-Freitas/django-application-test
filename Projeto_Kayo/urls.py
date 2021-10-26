@@ -20,6 +20,5 @@ from django.urls.conf import include
 from Projeto_Kayo import views as Projeto_views
 
 urlpatterns = [
-    path("", Projeto_views.index, name = "fgv"),
-    path(r"fgv/", include("Projeto_Kayo.urls"))
+    path("", Projeto_views.index, name = "main_view")
 ]
