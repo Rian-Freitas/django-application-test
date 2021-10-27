@@ -1,7 +1,7 @@
-from django.urls import path
-from fgv import views 
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path("", views.index, name="index"),
-    path("index/", views.index, name="index"),
+    path(r"fgv/", include("fgv.urls")),
+    path('admin/', admin.site.urls),
 ]
