@@ -1,12 +1,274 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=A, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-</body>
+<html>
+    <button onclick="toggle_run()">Toggle Run</button>
+    <p>You can also use the keyboard arrows.</p>
+    <br>
+    
+    <svg width="600" height="800">
+        <rect id="bkg_rect" width="600" height="800"/>
+        <g id="character_box">
+        <g id="character" class="running">            
+            
+            <!-- Left Arm -->
+            <g id="j_l_arm" class="upper_joint">
+                <rect id="left_arm" class="skn" x="310" y="300" height="100" width="40"/>
+                <g id="j_l_forearm" class="upper_joint">
+                    <rect id="left_forearm" class="skn" x="310" y="400" height="105" width="40"/>
+                </g>
+            </g>
+            <!-- neck -->
+            <rect id="neck" class="skn" x="285" y="270" height="35" width="30"/>
+            
+            <!-- Head -->
+            <g id="head" style="transform: translatey(10px)">
+                <path class="skn" d="M 277 264 C 298 278 297 287 308 287 L 326 285 C 339 279 349 216 328 194 C 313 178 286 189 277 195 C 266 201 267 245 277 263 Z"></path>
+                <!-- eyes -->
+                <ellipse class="eyes" cx="303" cy="233" rx="2.4" ry="3.1"/>
+                <ellipse class="eyes" cx="330" cy="230" rx="2.4" ry="3.1"/>
+
+                <!-- left Brown and eye_base -->
+                <line class="skn" x1="335" y1="225" x2="320" y2="230"></line>
+                <line class="skn" x1="325" y1="237" x2="335" y2="235"></line>
+                <!-- right Brown and eye_base -->
+                <line class="skn" x1="310" y1="231" x2="290" y2="227"></line>
+                <line class="skn" x1="310" y1="239" x2="290" y2="240"></line>
+                <!-- nose -->
+                <ellipse fill="black" cx="320" cy="250" rx="4" ry="2.5"/>
+                <!-- Mouth -->
+                <line class="skn" x1="318" y1="275" x2="312" y2="275"></line>
+                <!-- Hair 'spikes' -->
+                <g class="hair">
+                    <path class="skn" style="transform-origin: bottom; animation-duration: 0.85s; animation-delay: 0.01s" d="M 310 195 C 310 195 315 175 330 165 C 330 175 325 190 330 200"></path>
+                    <path class="skn" style="transform-origin: 4% 76%; animation-duration: 0.8s; animation-delay: 0.05s"d="M 320 192 C 325 180 360 185 370 190 C 370 190 340 200 330 210"></path>
+                    <path class="skn" style="transform-origin: left;   animation-duration: 0.75s; animation-delay: 0s"  d="M 320 215 C 320 210 340 210 350 230 C 350 210 350 200 350 200 C 340 190 320 195 320 200"></path>
+                    <path class="skn" style="transform-origin: 0 10%;  animation-duration: 0.82s; animation-delay: 0.1s" d="M 310 220 C 310 220 320 220 325 245 C 335 235 334 215 325 209"></path>
+                </g>
+            </g>
+
+            <!-- Left leg -->
+            <g id="j_l_leg" class="upper_joint">
+                <rect id="left_leg" class="skn" x="300" y="470" height="80" width="40"/>
+                <g id="j_l_shin" class="upper_joint">
+                    <rect id="left_shin" class="skn" x="300" y="550" height="75" width="40"/>
+                </g>
+            </g>
+            <!-- Right leg -->
+            <g id="j_r_leg" class="upper_joint">
+                <rect id="right_leg" class="skn" x="265" y="470" height="80" width="40"/>
+                <g id="j_r_shin" class="upper_joint">
+                    <rect id="right_shin" class="skn" x="265" y="550" height="75" width="40"/>
+                </g>
+            </g>
+
+            <!-- Body -->
+            <g id="body_rect">
+                <rect id="body" class="skn" x="265" y="300" height="170" width="75"/>
+                <polygon class="red" points="295 300 318 328 322 320 300 300"></polygon>
+                <polygon class="red" points="325 300 261 465 265 475 330 300"></polygon>
+                <rect class="red" x="262" y="465" height="10" width="80"/>
+            
+                <g id="knot">
+                    <rect class="red" x="315" y="470" height="80" width="10" style="transition: all 0.5s; transform-box: fill-box; animation-duration: 0.8s; animation-delay: 0.4s"/>
+                    <rect class="red" x="315" y="470" height="90" width="10" style="transition: all 0.3s; transform-box: fill-box; transform: rotate(-7deg); animation-duration: 0.9s;"/>
+                    <circle class="red" cx="320" cy="470" r="7"/>
+                </g>
+            </g>
+            
+            <!-- Right arm -->
+            <g id="j_r_arm" class="upper_joint">
+                <rect id="right_arm" class="skn" x="250" y="300" height="100" width="40"/>
+                <g id="j_r_forearm" class="upper_joint">
+                    <rect id="right_forearm" class="skn" x="250" y="400" height="105" width="40"/>
+                </g>
+            </g>
+        </g>
+        </g>
+
+        <style>
+            .red{
+                fill: rgb(214, 36, 36); 
+                stroke: rgb(0, 0, 0);
+            }
+            #character_box{
+                transform-origin: center;
+                transition: all 0.2s;
+            }
+            #character{
+                transition: all 0.3s;
+                animation-delay: 0.1s;
+                transform-origin: 50% 80%;
+            }
+            #character.running{
+                transition: all 0.5s;
+                transform: rotate(10deg);
+                animation-name: running_movement;
+                animation-delay: 0.7s;
+                animation-duration: 0.4s;
+                animation-iteration-count: infinite;
+            }
+            /* A bobbing effect on body, when running */
+            @keyframes running_movement{
+                0%{transform: rotate(10deg);}
+                50%{transform: rotate(11deg);}
+                100%{transform: rotate(10deg);}
+            }
+            /* Background */
+            #bkg_rect{
+                fill: rgb(255, 255, 255);
+                stroke-width: 3px;
+                stroke: black;
+            }
+            /* body parts */
+            .skn{
+                stroke-width: 2px;
+                stroke: black;
+                fill: rgb(231, 229, 222);
+                ry: 4px;
+                rx: 4px;
+            }
+            .eyes{
+                stroke: rgb(104, 44, 9);;
+                stroke-width: 1;
+            }
+            /* Parts that rotate around the upper portion */
+            .upper_joint{
+                transform: rotate(00deg);
+                transform-origin: 50% 10px;
+                transform-origin: 30% 15px;
+                transform-box: fill-box;
+                transition: all 0.5s;
+                animation-duration: 0.6s;
+                animation-timing-function: cubic-bezier(0.49, 0.32, 0.21, 0.75);
+                animation-iteration-count: infinite;
+            }
+            
+            /* legs */
+            #j_l_leg, #j_r_leg{
+                transform-origin: 50% 10px;
+            }
+
+            /* arms + legs */
+            .running #j_r_arm,.running #j_r_leg,.running #j_l_arm,.running #j_l_leg{
+                animation-name: running;
+            }
+            /* Animation that plays on arms and legs on the run */
+            @keyframes running {
+                0%{transform:rotate(0deg)}
+                25%{transform:rotate(35deg)}
+                50%{transform:rotate(0deg)}
+                75%{transform:rotate(-55deg)}
+                100%{transform:rotate(0deg)}
+            }
+
+            .flip{transform: scaleX(-1);}
+            
+
+
+            /* forearm */
+            .running #j_l_forearm, .running #j_r_forearm{
+                animation-name: running_r;
+            }
+            /* Forearms animation */
+            @keyframes running_r {
+                0%{transform:rotate(0deg)}
+                25%{transform:rotate(-10deg)}
+                75%{transform:rotate(-90deg)}
+                100%{transform:rotate(0deg)}
+            }
+            /* shin */
+            .running #j_l_shin, .running #j_r_shin{
+                animation-name: running_l;
+            }
+            /* Shins animation */
+            @keyframes running_l {
+                0%{transform:rotate(0deg)}
+                25%{transform:rotate(10deg)}
+                70%{transform:rotate(90deg)}
+                80%{transform:rotate(10deg)}
+                100%{transform:rotate(0deg)}
+            }
+            /* delay on arm parts */
+            #j_r_arm, #j_l_arm, #j_l_forearm, #j_r_forearm{
+                animation-delay: 0.1s;
+            }
+            /* Reverse some animations */
+            .running #j_r_arm,.running #j_l_leg,.running #j_r_forearm{
+                animation-direction: reverse;
+                animation-timing-function: cubic-bezier(0.49, 0.32, 0.21, 0.75);
+            }
+            /* no delay on left leg parts */
+            .running #j_l_leg, .running#j_l_shin{
+                animation-delay: 0s;
+            }
+            /* Specific animation for left shin */
+            .running #j_l_shin{
+                animation-name: running_li;
+            }
+            @keyframes running_li {
+                0%{transform:rotate(0deg)}
+                10%{transform:rotate(10deg)}
+                30%{transform:rotate(90deg)}
+                45%{transform:rotate(10deg)}
+                65%{transform:rotate(15deg)}
+                80%{transform:rotate(30deg)}
+                100%{transform:rotate(0deg)}
+            }
+
+            /* Hair */
+            .hair path{transform-box: fill-box;transition: all 0.8s;}
+            .running .hair path{
+                transform: rotate(-30deg);
+                transition: all 0.5s;
+                animation-name: running_hair_anim;
+                animation-timing-function: cubic-bezier(0.49, 0.32, 0.21, 0.75);
+                animation-iteration-count: infinite;
+            }
+            @keyframes running_hair_anim {
+                0%{transform:rotate(-30deg)}
+                25%{transform:rotate(-75deg)}
+                50%{transform:rotate(-55deg)}
+                75%{transform:rotate(-65deg)}
+                100%{transform:rotate(-30deg)}
+            }
+
+            /* The cloth wind animation */
+            #knot rect{transform: rotate(10deg);}
+            .running #knot rect{
+                transform: rotate(30deg);
+                animation-name: running_cloth;
+                animation-iteration-count: infinite;
+            }
+            @keyframes running_cloth {
+                0%{transform: rotate(45deg);}
+                50%{transform: rotate(80deg);}
+                100%{transform: rotate(45deg);}
+            }
+
+            /* just a secret animation state that modify the running that was created by accident.
+            .sarrando_nao_pergunte_fiz_por_acidente #j_r_arm,.sarrando_nao_pergunte_fiz_por_acidente #j_r_leg,.sarrando_nao_pergunte_fiz_por_acidente #j_l_arm,.sarrando_nao_pergunte_fiz_por_acidente #j_l_leg{animation-direction: alternate;}
+            */
+        </style>
+    </svg>
+    
+    <script>
+        function toggle_run(){
+            document.getElementById("character").classList.toggle("running")
+        }
+        document.addEventListener("keydown",(e)=>{
+            if(e.key=="ArrowRight" || e.key=="ArrowLeft"){
+                document.getElementById("character").classList.add("running")
+                if(e.key=="ArrowLeft"){
+                    document.getElementById("character_box").classList.add("flip")
+                }else{
+                    
+                    document.getElementById("character_box").classList.remove("flip")
+                }
+            }
+        })
+        document.addEventListener("keyup",(e)=>{
+            if(e.key=="ArrowRight" || e.key=="ArrowLeft"){
+                document.getElementById("character").classList.remove("running")
+            }
+        })
+    </script>
+
 </html>

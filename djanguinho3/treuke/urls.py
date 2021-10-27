@@ -4,5 +4,6 @@ from treuke import views as treuke_views
 
 
 urlpatterns = [
-    path("", treuke_views.index, name="index")
+    path("", treuke_views.index, name="index"),
+    path("special/", treuke_views.special, name="special")
 ]
