@@ -23,6 +23,7 @@ urlpatterns = [
     path(r"treuke/",include("treuke.urls")),
     path(r"kayo/", include("Projeto_Kayo.urls")),
     path(r"dominique/", include("dominique.urls")),
+    path(r"iara/", include("iara.urls")),
     path('admin/', admin.site.urls),
     # path('', fgv_views.index, name="index"),
 ]
