@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'treuke',
     'laguardia',
-    'RodrigoPintucci'
+    'RodrigoPintucci',
+    'Projeto_Kayo',
+    'dominique'
 ]
 
 MIDDLEWARE = [

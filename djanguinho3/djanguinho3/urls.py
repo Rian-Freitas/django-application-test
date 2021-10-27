@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from fgv import views as fgv_views
+# from fgv import views as fgv_views
   
 urlpatterns = [
     path(r'laguardia/', include('laguardia.urls')),
-    path(r"RodrigoPintucci/", include("RodrigoPintucci.urls")),
+    path(r"RodrigoPintucci/", include("RodrigoPintucci.urls")), #proibido mudar
     path(r"treuke/",include("treuke.urls")),
+    path(r"kayo/", include("Projeto_Kayo.urls")),
+    path(r"dominique/", include("dominique.urls")),
     path('admin/', admin.site.urls),
-    path('', fgv_views.index, name="index"),
+    # path('', fgv_views.index, name="index"),
 ]
