@@ -1,0 +1,225 @@
+@keyframes animation_1 {
+    0% {transform:  rotate(0deg) translateX(none) translateY(none)  ; }
+	100% {transform: rotate(360deg) translateX(-180px) translateY(100px);  }
+}
+
+@keyframes animation_2 {
+    0% {transform:  rotate(0deg) translateX(none) translateY(none)  ; }
+	100% {transform: rotate(360deg) translateX(170px) translateY(-100px);  }
+}
+
+@keyframes rotation {
+    0% {transform:rotate(0deg); }
+	100% {transform:rotate(360deg);  }
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 0;
+        }
+    to {
+        stroke-dashoffset: 1000;
+        }
+}
+
+@keyframes expansion_1 {
+    from {
+        transform: rotate(52deg) scale(1, 1);
+    }
+    to {
+        transform: rotate(52deg) scale(2, 2);
+    }
+}
+
+@keyframes expansion_2 {
+    from {
+        transform: rotate(-135.48deg) scale(1, 1);
+    }
+    to {
+        transform: rotate(-135.48deg) scale(2, 2);
+    }
+}
+.particles {
+    animation: rotation 10s infinite linear;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+#svg_1 {
+    animation: rotation 180s infinite linear
+}
+
+#svg_7 {
+    animation: rotation 60s infinite linear
+}
+
+#svg_10 {
+    animation: rotation 40s infinite linear
+}
+
+#svg_15 {
+    animation: rotation 17s infinite linear
+}
+
+.star_1 {
+    opacity: 0.8;
+    stroke: #000;
+    stroke-width: 0px;
+    fill: #a95ef9;
+}
+
+.star_2 {
+    opacity: 0.8;
+    stroke: #000;
+    stroke-width: 0px;
+    fill: #ff5656;
+}
+
+.star_3 {
+    opacity: 0.8;
+    stroke: #000;
+    stroke-width: 0px;
+    fill: #efb783;
+}
+
+.star_4 {
+    stroke: #000;
+    stroke-width: 0px;
+    opacity: 0.5;
+    fill: #2dc7ff;
+}
+
+.star_5 {
+    stroke: #000;
+    stroke-width: 0px;
+    opacity: 0.5;
+    fill: #7a2dff;
+}
+
+rect {
+    height: 70px;
+    width: 300px;
+    stroke: none;
+}
+
+.neutron_star_1 {
+    animation: animation_1 4s infinite linear;
+    transform-origin: center;
+}
+
+.neutron_star_2 {
+    animation: animation_2 4s infinite linear;
+    transform-origin: center;
+}
+
+.neutron_star_nebula {
+    animation: rotation 3s infinite linear;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.neutron_star_details {
+    stroke: #000;
+    stroke-width: 0px;
+    opacity: 0.7;
+    fill: #2dc7ff;
+}
+
+.shining {
+    stroke: #000;
+    stroke-width: 2px;
+    opacity: 0.2;
+    height: 3.57126pt;
+    width: 41.42856pt;
+    fill: #cccccc;
+}
+
+.linha {
+    animation: dash 10s linear infinite;
+}
+
+.linha_2 {
+    animation: dash 20s linear infinite;
+}
+
+.elipse {
+    animation: dash 100s linear infinite, expansion_1 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.elipse_2 {
+    animation: dash 60s linear infinite, expansion_1 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.elipse_3 {
+    animation: dash 40s linear infinite, expansion_1 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.elipse_4 {
+    animation: dash 25s linear infinite, expansion_1 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.elipse_5 {
+    animation: dash 12s linear infinite, expansion_1 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.elipse_6 {
+    animation: dash 5s linear infinite, expansion_1 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.elipse_7 {
+    animation: dash 2s linear infinite, expansion_1 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.semi_elipse {
+    animation: dash 100s linear infinite, expansion_2 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.semi_elipse_2 {
+    animation: dash 60s linear infinite, expansion_2 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.semi_elipse_3 {
+    animation: dash 40s linear infinite, expansion_2 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.semi_elipse_4 {
+    animation: dash 25s linear infinite, expansion_2 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.semi_elipse_5 {
+    animation: dash 12s linear infinite, expansion_2 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.semi_elipse_6 {
+    animation: dash 5s linear infinite, expansion_2 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.semi_elipse_7 {
+    animation: dash 2s linear infinite, expansion_2 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+h1, p , li {
+    color: white;
+}
+
+p {
+    text-indent: 1cm;
+}
