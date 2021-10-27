@@ -1,4 +1,4 @@
-"""djanguinho3 URL Configuration
+"""Projeto_Kayo URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -14,13 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
-from fgv import views as fgv_views
-  
+from django.urls import path
+from django.urls.conf import include
+
+from Projeto_Kayo import views as Projeto_views
+
 urlpatterns = [
-    path(r'laguardia/', include('laguardia.urls')),
-    path(r"RodrigoPintucci/", include("RodrigoPintucci.urls")),
-    path(r"treuke/",include("treuke.urls")),
-    path('admin/', admin.site.urls),
-    path('', fgv_views.index, name="index"),
+    path("", Projeto_views.index, name = "main_view")
 ]
