@@ -1,0 +1,189 @@
+<html>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg_screen" width="600" height="600">
+        <rect id="bkg_rect" width="600" height="600"/>
+        <style>
+            .generated_path{
+                stroke-width: 3px;
+                animation-name: appear;
+                animation-duration: 0.5s;
+                fill:'#66aaff88';
+                opacity: 1;
+                transition: all 0.2s;
+            }
+            .hidden{
+                transition: all 0.2s;
+                opacity: 0;
+            }
+            .generated_point:hover{
+                fill: #f00f;
+            }
+            .temp{
+                fill: white;
+                border: 10px;
+                animation-name: temp_transition;
+                animation-duration: 0.5s;
+                animation-iteration-count: 1;
+                transition: all 0.5s;
+                r : 8;
+            }
+            @keyframes temp_transition {
+                0%{
+                    r: 0;
+                }
+                100%{
+                    r: 8;
+                }
+            }
+            @keyframes appear {
+                0%{
+                    fill-opacity: 0;
+                }
+                100%{
+                    fill-opacity: 100%;
+                }
+            }
+            
+        </style>
+    </svg>
+    <script>
+        // Função para criar um elemento Svg de maneira mais pratica.
+        function getNode(n, v) {
+            n = document.createElementNS("http://www.w3.org/2000/svg", n);
+            for (var p in v)
+                n.setAttributeNS(null, p, v[p]);
+            return n
+        }
+        // Função para gerar um numero aleatorio de maneira mais pratica.
+        function random(floor,range) {
+            return (floor+Math.floor(Math.random() * range))    
+        }
+        // Função para obter pseudo-angulo (já alterado para obter resultado 
+        // diferente em angulos acima de Pi)
+        function pseudo_angle(x,y,p_y){
+            // Quando o angulo é maior que Pi, y será negativo.
+            // Em caso de y negativo, a conta será 1 + [...] e não 1 - [...],
+            // Também é adicionado 10 ao resultado para os y<0 ficarem depois
+            // dos positivos ao ordenar crescentemente.
+            if(p_y){
+                m=1
+            }else{
+                m=-1
+            };
+            p = 1 - (( x[0]*y[0] + x[1]*y[1]  ) / ( Math.sqrt(x[0]**2+x[1]**2) * Math.sqrt(y[0]**2+y[1]**2)  )) *m
+            if(!p_y){
+                p+=10
+            }
+            return p
+        }
+        //
+        function timeout(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        async function sleep(t,fn, ...args) {
+            await timeout(t);
+            return fn(...args);
+        }
+        
+
+        // Obter o svg dentro do documento, para interagir com ele pelo Js.
+        svg = document.getElementById("svg_screen")
+    
+        // Popular os pontos de maneira aleatória
+        point_list=[]
+        points_to_generate = 6
+
+        total_x = 0
+        total_y = 0
+        for(i=0;i<points_to_generate;i++){
+            x=random(50,500);
+            y=random(50,500);
+            total_x = total_x + x
+            total_y = total_y + y
+            dot=getNode('circle', { cx:x,cy:y, r: 8, fill:'#fff', class:"generated_point"});
+            point_list.push(dot);
+        }
+        temp_list=[]
+        for(index in point_list){
+            temp_list.push(point_list[index].cloneNode())
+            temp_list[index].classList.add("temp")
+            setTimeout(() => {
+                i_to_add=document.getElementsByClassName("temp").length
+                svg.appendChild( temp_list[i_to_add] )
+            }, (index)*300);
+        }
+
+
+        // Adiciona um ponto no centro
+        c_c = [300,300]
+        c_c = [total_x/points_to_generate,total_y/points_to_generate]
+        
+        center_dot=getNode('circle', { cx:c_c[0],cy:c_c[1], r: 5, fill:'#f00' });
+        svg.appendChild( center_dot );
+        
+        center_line=getNode('line', { x1:c_c[0],y1:c_c[1], x2:1200, y2:c_c[1], r: 5, stroke:'#fff', class:"hidden" });
+        svg.appendChild( center_line );
+        
+        
+
+        ordered_points=[]
+        u=[1,0]  // Vetor que vai do centro para extremidade direita.
+        f_o_p = []   // Lista dos pontos no svg, imagine aí o que essa sigla pode significar pq eu não lembro
+        
+        // Função que calcula o PseudoAngulo de cada ponto.
+        for(index in point_list){
+            point = point_list[index]
+            x = parseInt(point.getAttribute("cx"))-c_c[0];
+            y = parseInt(point.getAttribute("cy"))-c_c[1];
+            v = [x,y]
+            p_a = pseudo_angle(u,v,y>=0)
+            
+            n_p = {p_index: index, point: point, p_angle: p_a}
+            f_o_p.push(n_p)
+        }
+
+        // Ordena os pontos conforme o pseudo_angulo.  
+        //  (obs: o pseudo angulo está ajustado para angulos 
+        //  acima de Pi serem colocados na ordem certa)
+        f_o_p=f_o_p.sort(function (x,y){
+            return y.p_angle - x.p_angle;
+        });
+        
+        // Gera a string do caminho no path
+        path=("M"+
+        f_o_p[0].point.getAttribute("cx")
+        +" "+
+        f_o_p[0].point.getAttribute("cy"));
+        
+        for(index in f_o_p){
+            indexy=parseInt(index)+1
+            if(indexy==f_o_p.length){indexy=0}
+            path=path+" L"+f_o_p[indexy].point.getAttribute("cx")+" "+f_o_p[indexy].point.getAttribute("cy")
+        }
+        path=path+" Z"
+
+        
+
+        //Adiciona o path.
+        svg_path=getNode('path', {'d':path, 'fill':'#66aaff88', 'stroke':'#ffffff', class:'hidden'})
+        svg.appendChild(svg_path)
+        setTimeout(()=>{
+            for(index in f_o_p){
+                a=svg.appendChild(f_o_p[index].point);
+                temp_list[f_o_p[index].p_index].remove()
+                a.animate([
+                    {fill: '#fff'},
+                    {fill: '#00f'},
+                    {fill: '#fff'}
+                ],{
+                    duration: 500,
+                    iterations: 1,
+                    delay: index*200
+                })
+            }
+        },(points_to_generate)*400)
+        setTimeout(()=>{
+            svg_path.classList.toggle("generated_path")
+            svg_path.classList.toggle("hidden")
+        },(points_to_generate+4)*400)
+    </script>
+</html>

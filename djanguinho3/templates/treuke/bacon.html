@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bacon</title>
+</head>
+<body>
+    <button onclick="add_bacon()">Add Bacon</button>
+    <div id="gallery">
+
+    </div>
+</body>
+<style>
+    #gallery{
+        display: flex;
+        flex-wrap: wrap;
+    }
+</style>
+<script>
+    function add_bacon(){
+        dice1 = Math.floor(Math.random() * 500)+100;
+        dice2 = Math.floor(Math.random() * 500)+100;
+        src = "https://baconmockup.com/"+dice1+"/"+dice2+"/"
+        img = document.createElement("img")
+        img.src = src
+        document.getElementById("gallery").appendChild(img)
+    }
+
+</script>
+</html>
