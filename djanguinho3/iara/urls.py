@@ -4,5 +4,5 @@ from iara import views as iara_views
 
 urlpatterns = [
     path("", iara_views.index, name="index"),
-    path("special/", views.special, name="special")
+    path("special/", iara_views.special, name="special")
 ]
