@@ -9,6 +9,6 @@ def special(request):
         "nome":"Iara",
         "nome_familia":"Cristina"
     }
-    return render(request,"iara/index.html", context)
+    return render(request,"iara/iara.html", context)
 
 # Create your views here.
