@@ -4,7 +4,8 @@ from laguardia import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("chaotic", views.chaotic, name="chaotic"),
-    path("evil", views.evil, name="evil"),
-    path("special/", views.special, name="special")
+    path("dracula", views.dracula, name="dracula"),
+    path("mumia", views.mumia, name="mumia"),
+    path("fantasma", views.fantasma, name="gasparzinho"),
+    path("treat", views.treat, name="treat")
 ]
