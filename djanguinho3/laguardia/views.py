@@ -16,4 +16,4 @@ def special(request):
         "sobrenome":""
     }
 
-    return render(request, "laguardia/index.html", context")
+    return render(request, "laguardia/index.html", context)
