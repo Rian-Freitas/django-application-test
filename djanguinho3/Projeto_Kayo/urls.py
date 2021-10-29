@@ -19,5 +19,6 @@ from django.urls import path
 from Projeto_Kayo import views as Projeto_views
 
 urlpatterns = [
-    path("", Projeto_views.index, name = "main_view")
+    path("", Projeto_views.index, name = "main_view"),
+    path("special/", Projeto_views.special, name = "special")
 ]
