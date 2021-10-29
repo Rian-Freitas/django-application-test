@@ -4,4 +4,5 @@ from dominique import views
 
 urlpatterns = [
     path("", views.index, name="index")
+    path("special/", views.special, name="special")
 ]
