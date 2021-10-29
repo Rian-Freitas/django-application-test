@@ -9,3 +9,11 @@ def chaotic(request):
 
 def evil(request):
     return HttpResponse("não sinta-se em casa mwhahahah")
+
+def special(request):
+    context = {
+        "nome":"Laguardia",
+        "sobrenome":""
+    }
+
+    return render(request, "laguardia/index.html", context")
