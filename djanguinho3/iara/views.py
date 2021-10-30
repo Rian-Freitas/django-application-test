@@ -11,4 +11,9 @@ def special(request):
     }
     return render(request,"iara/iara.html", context)
 
+def special_2(request):
+    return render(request,"iara/teste2.html")
+
+def special_3(request):
+    return render(request,"iara/teste3.html")
 # Create your views here.
