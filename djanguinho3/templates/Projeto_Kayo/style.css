@@ -1,0 +1,54 @@
+@keyframes rotacao {
+    0% {transform:rotate(0deg); }
+	100% {transform:rotate(360deg);  }
+}
+
+.animacao {
+    animation: rotacao 10s infinite linear;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+#svg_1 {
+    animation: rotacao 180s infinite linear
+}
+
+#svg_7 {
+    animation: rotacao 60s infinite linear
+}
+
+#svg_10 {
+    animation: rotacao 40s infinite linear
+}
+
+#svg_15 {
+    animation: rotacao 17s infinite linear
+}
+
+.star_1 {
+    opacity: 0.8;
+    stroke: #000;
+    stroke-width: 0px;
+    fill: #a95ef9;
+}
+
+.star_2 {
+    opacity: 0.8;
+    stroke: #000;
+    stroke-width: 0px;
+    fill: #ff5656;
+}
+
+.star_3 {
+    opacity: 0.8;
+    stroke: #000;
+    stroke-width: 0px;
+    fill: #efb783;
+}
+
+rect {
+    height: 70px;
+    width: 300px;
+    stroke: none;
+    fill: #240073;
+}

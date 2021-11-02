@@ -1,0 +1,108 @@
+.linha {
+    animation: dash 10s linear infinite;
+}
+
+.linha_2 {
+    animation: dash 20s linear infinite;
+}
+
+.elipse {
+    animation: dash 100s linear infinite, expansion_1 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.elipse_2 {
+    animation: dash 60s linear infinite, expansion_1 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.elipse_3 {
+    animation: dash 40s linear infinite, expansion_1 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.elipse_4 {
+    animation: dash 25s linear infinite, expansion_1 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.elipse_5 {
+    animation: dash 12s linear infinite, expansion_1 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.elipse_6 {
+    animation: dash 5s linear infinite, expansion_1 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.elipse_7 {
+    animation: dash 2s linear infinite, expansion_1 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.semi_elipse {
+    animation: dash 100s linear infinite, expansion_2 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.semi_elipse_2 {
+    animation: dash 60s linear infinite, expansion_2 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.semi_elipse_3 {
+    animation: dash 40s linear infinite, expansion_2 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.semi_elipse_4 {
+    animation: dash 25s linear infinite, expansion_2 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.semi_elipse_5 {
+    animation: dash 12s linear infinite, expansion_2 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.semi_elipse_6 {
+    animation: dash 5s linear infinite, expansion_2 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.semi_elipse_7 {
+    animation: dash 2s linear infinite, expansion_2 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+  
+@keyframes dash {
+    from {
+        stroke-dashoffset: 0;
+        }
+    to {
+        stroke-dashoffset: 1000;
+        }
+}
+
+@keyframes expansion_1 {
+    from {
+        transform: rotate(52deg) scale(1, 1);
+    }
+    to {
+        transform: rotate(52deg) scale(2, 2);
+    }
+}
+
+@keyframes expansion_2 {
+    from {
+        transform: rotate(-135.48deg) scale(1, 1);
+    }
+    to {
+        transform: rotate(-135.48deg) scale(2, 2);
+    }
+}
