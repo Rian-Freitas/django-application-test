@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 15px;
+}
+
+body{
+    font-family: monospace;
+    background-image:url(img/fundo.png); 
+    background-repeat: repeat; 
+    cursor: url(img/Nave1.png), default;
+}
+
+
+h1{
+    letter-spacing: 5px;
+    color: white;
+    text-shadow: 3px 0 0 #000, -3px 0 0 #000, 0 3px 0 #000, 0 -3px 0 #000, 2px 2px #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+h4{
+    font-size: 30px;
+    width:900px;
+}
+.center{
+    text-align: center;
+    width: 1200px;
+    height: 500px;
+    margin-left: 25px;
+}
+.esquerda2{
+    float: left;
+    margin-left: 80px;
+}
+
+.direita2{
+    float: right;
+    margin-right: 80px;
+}
+
+
+.esquerda{
+    margin-left: 200px;
+    text-align: left;
+}
+
+.direita{
+    margin-right: 200px;
+    text-align: right;
+}
+
+
+ul{
+    font-size: 20px;
+    list-style: none;
+}
+
+li{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    margin: 0;
+}
+
+div{
+    width: 1000px;
+    height: 200px;
+    margin-bottom: 100px;
+    background-color: RebeccaPurple;
+}
+
+p{
+    font-size: 30px;
+    color: rgba(111, 74, 149, 0)
+}
+
+table{
+    width: 1000px;
+}
+
+
+#abaixagato{
+     margin-top: 66px;
+}
+
+video{
+     text-align: center;
+     width:480px; 
+     height:360px;
+}
+footer{
+    font-size: 20px;
+}
+
+tr, td{
+   font-weight:bold;
+   font-size: 15px;
+}
+
+th{
+   font-size: 30px;
+}
+
+#center2{
+   margin-left: 85px;
+}
+
+#center3{
+   margin-left: 135px;
+}
+
+#invisible{
+    color: rgba(111, 74, 149, 0)
+}
+

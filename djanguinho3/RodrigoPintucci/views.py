@@ -11,3 +11,9 @@ def special(request):
         "nome_familia":"Pintucci"
     }
     return render(request,"RodrigoPintucci/SVGdesenho2.html", context)
+
+def ferias(request):
+    return render(request,"RodrigoPintucci/paginahtml.html")
+
+def cookie(request):
+    return render(request,"RodrigoPintucci/cookieborgar.html")
