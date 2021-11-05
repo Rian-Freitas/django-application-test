@@ -27,3 +27,10 @@ def cookie_din(request, param):
 def redireciona(request):
     url_redirecionamento = reverse("cookie_din", args=["acabou"])
     return HttpResponseRedirect(url_redirecionamento)
+
+def cookintucci(request):
+    context = {
+        "nome":"Rodrigo",
+        "nome_familia":"Pintucci"
+    }
+    return render(request,"RodrigoPintucci/cookieborgar2.html", context)

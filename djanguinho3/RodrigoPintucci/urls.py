@@ -7,5 +7,6 @@ urlpatterns = [
     path("special/", RodrigoPintucci_views.special, name="special"),
     path("ferias/", RodrigoPintucci_views.ferias, name="ferias"),
     path("cookie/", RodrigoPintucci_views.cookie, name="cookie"),
-    path("cookie/<param>", RodrigoPintucci_views.cookie_din, name="cookie_din")
+    path("cookie/<param>", RodrigoPintucci_views.cookie_din, name="cookie_din"),
+    path("cookintucci/", RodrigoPintucci_views.cookintucci, name="cookintucci")
 ]
