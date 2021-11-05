@@ -1,0 +1,63 @@
+@keyframes animation_1 {
+    0% {transform:  rotate(0deg) translateX(none) translateY(none)  ; }
+	100% {transform: rotate(360deg) translateX(-180px) translateY(100px);  }
+}
+
+@keyframes animation_2 {
+    0% {transform:  rotate(0deg) translateX(none) translateY(none)  ; }
+	100% {transform: rotate(360deg) translateX(170px) translateY(-100px);  }
+}
+
+@keyframes rotation {
+    0% {transform:rotate(0deg); }
+	100% {transform:rotate(360deg);  }
+}
+
+.neutron_star_1 {
+    animation: animation_1 4s infinite linear;
+    transform-origin: center;
+}
+
+.neutron_star_2 {
+    animation: animation_2 4s infinite linear;
+    transform-origin: center;
+}
+
+.neutron_star_nebula {
+    animation: rotation 3s infinite linear;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.neutron_star_details {
+    stroke: #000;
+    stroke-width: 0px;
+    opacity: 0.7;
+    fill: #2dc7ff;
+}
+
+.star_3 {
+    stroke: #000;
+    stroke-width: 0px;
+    opacity: 0.5;
+    fill: #2dc7ff;
+}
+
+.star_4 {
+    stroke: #000;
+    stroke-width: 0px;
+    opacity: 0.5;
+    fill: #7a2dff;
+}
+
+.shining {
+    stroke: #000;
+    stroke-width: 2px;
+    opacity: 0.2;
+    height: 3.57126pt;
+    width: 41.42856pt;
+    fill: #cccccc;
+}
+
+
+

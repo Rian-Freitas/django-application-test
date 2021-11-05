@@ -20,5 +20,8 @@ from Projeto_Kayo import views as Projeto_views
 
 urlpatterns = [
     path("", Projeto_views.index, name = "main_view"),
-    path("special/", Projeto_views.special, name = "special")
+    path("infograf/", Projeto_views.infograf, name = "infograf"),
+    path("desenho_1/", Projeto_views.desenho_1, name = "desenho_1"),
+    path("desenho_2/", Projeto_views.desenho_2, name = "desenho_2"),
+    path("desenho_3/", Projeto_views.desenho_3, name = "desenho_3")
 ]

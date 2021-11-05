@@ -1,5 +1,5 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
+from django.shortcuts import render, reverse
 
 # Create your views here.
 def index(request):
@@ -11,3 +11,19 @@ def special(request):
         "nome_familia":"Pintucci"
     }
     return render(request,"RodrigoPintucci/SVGdesenho2.html", context)
+
+def ferias(request):
+    return render(request,"RodrigoPintucci/paginahtml.html")
+
+def cookie(request):
+    return render(request,"RodrigoPintucci/cookieborgar.html")
+
+def cookie_din(request, param):
+    if param == "acabou":
+        return HttpResponse("<strong>VOCÊ COMEU TUDO!!</strong>")
+    else:
+        return HttpResponseNotFound("<strong>Creio que se enganou, caro amigo.</strong>")
+
+def redireciona(request):
+    url_redirecionamento = reverse("cookie_din", args=["acabou"])
+    return HttpResponseRedirect(url_redirecionamento)
