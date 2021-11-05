@@ -1,12 +1,21 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, reverse
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
+
+def redireciona(request):
+    url = reverse("trickortreat", args=["treat"])
+    return HttpResponseRedirect(url)
 
 def index(request):
     return HttpResponse("<h1>🦇Mwhaha! Seja bem-vindo a minha página mal assombrada!🦇</h1>\
     <br>Procure por personagens de halloween no link.🎃")
 
-def treat(request):
-    return HttpResponse("🍬 você achou um doce :D")
+def trickortreat(request, choice):
+    if choice == "treat":
+        return HttpResponse("🍬 você achou um doce :D")
+    elif choice == "trick":
+        return HttpResponse("😈 você foi trickado >:D haha")
+    else:
+        return HttpResponseNotFound("Escolha inválida :c")
 
 
 def dracula(request):

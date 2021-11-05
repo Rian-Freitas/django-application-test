@@ -7,5 +7,6 @@ urlpatterns = [
     path("dracula", views.dracula, name="dracula"),
     path("mumia", views.mumia, name="mumia"),
     path("fantasma", views.fantasma, name="gasparzinho"),
-    path("treat", views.treat, name="treat")
+    path("trickortreat/<str:choice>", views.trickortreat, name="trickortreat"),
+    path("naosei", views.redireciona, name="redirecionado")
 ]
