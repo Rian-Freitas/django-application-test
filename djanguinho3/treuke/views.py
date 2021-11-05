@@ -19,14 +19,13 @@ def view_dinamica_int(request,param):
 
 
 def special(request):
-    context = {
-        "nome":"Luque",
-        "nome_familia":"truco"
-    }
-    return render(request,"treuke/truco.html", context)
+    return render(request,"treuke/truco.html")
 
 def pontos(request):
     return render(request,"treuke/exercicio_pontos.html")
 
 def bacon(request):
-    return render(request,"treuke/bacon.html")
+    context = {
+        "nome":"samplenamehere"
+    }
+    return render(request,"treuke/bacon.html",context)
