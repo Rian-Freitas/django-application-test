@@ -26,3 +26,10 @@ def mumia(request):
 
 def fantasma(request):
     return render(request, "laguardia/fantasma.html")
+
+def custom(request):
+    context = {"criatura": "👾",
+                "frase1": "~Digite aqui a frase principal~",
+                "frase2": "~Digite aqui a frase secundária~"}
+
+    return render(request, "laguardia/custom.html", context)
