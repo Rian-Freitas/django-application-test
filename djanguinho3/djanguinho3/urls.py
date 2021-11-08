@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-# from fgv import views as fgv_views
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
+from djanguinho3 import views
   
 urlpatterns = [
+	path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon.ico'))),
+    path('', views.index, name="index"),
     path(r'laguardia/', include('laguardia.urls')),
     path(r"RodrigoPintucci/", include("RodrigoPintucci.urls")), #proibido mudar
     path(r"treuke/",include("treuke.urls")),
