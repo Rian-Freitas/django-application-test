@@ -2,20 +2,16 @@ from django.shortcuts import render, reverse
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
 
 def redireciona(request):
-    url = reverse("trickortreat", args=["treat"])
+    url = reverse("trickortreat")
     return HttpResponseRedirect(url)
 
 def index(request):
     return HttpResponse("<h1>🦇Mwhaha! Seja bem-vindo a minha página mal assombrada!🦇</h1>\
     <br>Procure por personagens de halloween no link.🎃")
 
-def trickortreat(request, choice):
-    if choice == "treat":
-        return HttpResponse("🍬 você achou um doce :D")
-    elif choice == "trick":
-        return HttpResponse("😈 você foi trickado >:D haha")
-    else:
-        return HttpResponseNotFound("Escolha inválida :c")
+def trickortreat(request):
+    context = {"possib" : ['🍬 você achou um doce :D', '😈 você foi trickado >:D haha']}
+    return render(request, "laguardia/trickortreat.html", context)
 
 
 def dracula(request):
@@ -30,6 +26,7 @@ def fantasma(request):
 def custom(request):
     context = {"criatura": "👾",
                 "frase1": "~Digite aqui a frase principal~",
-                "frase2": "~Digite aqui a frase secundária~"}
+                "frase2": "~Digite aqui a frase secundária~",
+                "atributos": ["5", "7", "2", "4", "3"]}
 
     return render(request, "laguardia/custom.html", context)

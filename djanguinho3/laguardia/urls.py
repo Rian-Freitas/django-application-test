@@ -8,6 +8,6 @@ urlpatterns = [
     path("mumia", views.mumia, name="mumia"),
     path("fantasma", views.fantasma, name="gasparzinho"),
     path("custom", views.custom, name="custom"),
-    path("trickortreat/<str:choice>", views.trickortreat, name="trickortreat"),
+    path("trickortreat", views.trickortreat, name="trickortreat"),
     path("naosei", views.redireciona, name="redirecionado")
 ]
