@@ -27,6 +27,6 @@ def custom(request):
     context = {"criatura": "👾",
                 "frase1": "~Digite aqui a frase principal~",
                 "frase2": "~Digite aqui a frase secundária~",
-                "atributos": ["5", "7", "2", "4", "3"]}
+                "atributos": ["Força: 5", "Inteligência: 7", "Destreza: 2", "Lábia: 4", "Velocidade: 3"]}
 
     return render(request, "laguardia/custom.html", context)
