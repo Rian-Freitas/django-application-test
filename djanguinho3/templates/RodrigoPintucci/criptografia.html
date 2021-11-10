@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "RodrigoPintucci/pintuccitemplate.html" %} 
+{% load static %}
+
+{% block cabeçalho %}
     <title>????</title>
-</head>
-<body>
+{% endblock %}
+{% block estilo %}{% endblock %}
+
+{% block conteudo %}
     <text>O [{{segredo|upper}}] adverte: reinicie a página.</text>
     <h1>{{crypto|random}}</h1>
     <text>{{ mensagem|cut:" " }}</text>
     <text>Dica: a mensagem tem {{mensagem|wordcount}} palavras</text>
-    {%include "RodrigoPintucci/finalzin.html" %}
-</body>
-</html>
+{% endblock %}
+
+{% include "RodrigoPintucci/finalzin.html" %}
