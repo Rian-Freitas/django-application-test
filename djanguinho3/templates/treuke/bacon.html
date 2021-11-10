@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bacon</title>
 </head>
+{% include "treuke/header.html" %}
 <body>
+    Item aleatório da vez: {{ list|random }}.
+    {{string_espacada|cut:" "}}
+    {{valor|default:"nada havia sido inserido" }}.
+    
+    <br>
+
     <button onclick="add_bacon()">Add Bacon</button>
-    Olá {{nome}} essa é uma galeria de bacon destinada a você:
+    Olá {{nome|capfirst}}, essa é uma galeria de bacon destinada a você:
     <div id="gallery">
 
     </div>

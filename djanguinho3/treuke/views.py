@@ -26,6 +26,9 @@ def pontos(request):
 
 def bacon(request):
     context = {
-        "nome":"samplenamehere"
+        "nome":"samplenamehere",
+        "list":["a","b","c"],
+        "string_espacada":"AA    aaa  loo oo",
+        "valor":""
     }
     return render(request,"treuke/bacon.html",context)
