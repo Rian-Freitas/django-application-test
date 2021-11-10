@@ -16,4 +16,8 @@ def special_2(request):
 
 def special_3(request):
     return render(request,"iara/teste3.html")
+
+def caraoucoroa(request):
+    context = {"possib" : ['Cara', 'Coroa']}
+    return render(request, "iara/caracoroa.html", context)
 # Create your views here.
