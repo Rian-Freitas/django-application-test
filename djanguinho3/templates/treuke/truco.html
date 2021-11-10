@@ -1,4 +1,10 @@
-<html>
+{% extends "treuke/truco-template.html"%}
+
+{% block meta %}
+<title>Running guy</title>
+{% endblock %}
+
+{% block conteudo %}
     <button onclick="toggle_run()">Toggle Run</button>
     <p>You can also use the keyboard arrows.</p>
     <br>
@@ -248,7 +254,8 @@
             */
         </style>
     </svg>
-    
+{% endblock %}
+{% block footer %}
     <script>
         function toggle_run(){
             document.getElementById("character").classList.toggle("running")
@@ -270,5 +277,4 @@
             }
         })
     </script>
-
-</html>
+{% endblock %}

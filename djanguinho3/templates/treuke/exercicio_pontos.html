@@ -1,4 +1,10 @@
-<html>
+{% extends "treuke/truco-template.html"%}
+
+{% block meta %}
+<title>pontos</title>
+{% endblock %}
+
+{% block conteudo %}
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg_screen" width="600" height="600">
         <rect id="bkg_rect" width="600" height="600"/>
         <style>
@@ -45,6 +51,8 @@
             
         </style>
     </svg>
+{% endblock %}
+{% block footer %}
     <script>
         // Função para criar um elemento Svg de maneira mais pratica.
         function getNode(n, v) {
@@ -186,4 +194,4 @@
             svg_path.classList.toggle("hidden")
         },(points_to_generate+4)*400)
     </script>
-</html>
+{% endblock %}
