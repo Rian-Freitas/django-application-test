@@ -8,5 +8,6 @@ urlpatterns = [
     path("ferias/", RodrigoPintucci_views.ferias, name="ferias"),
     path("cookie/", RodrigoPintucci_views.cookie, name="cookie"),
     path("cookie/<param>", RodrigoPintucci_views.cookie_din, name="cookie_din"),
-    path("cookintucci/", RodrigoPintucci_views.cookintucci, name="cookintucci")
+    path("cookintucci/", RodrigoPintucci_views.cookintucci, name="cookintucci"),
+    path("criptografia/", RodrigoPintucci_views.criptografia, name="criptografia")
 ]
