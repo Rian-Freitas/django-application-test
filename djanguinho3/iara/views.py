@@ -15,7 +15,7 @@ def special_2(request):
     return render(request,"iara/teste2.html")
 
 def special_3(request):
-    return render(request,"iara/teste3.html")
+    return render(request,"iara/iara_template.html")
 
 def caraoucoroa(request):
     context = {"possib" : ['Cara', 'Coroa']}
