@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bacon</title>
-</head>
-{% include "treuke/header.html" %}
-<body>
+{% extends "treuke/truco-template.html"%}
+
+{% block meta %}
+<title>Bacon</title>
+{% endblock %}
+
+
+{% block conteudo %}
     Item aleatório da vez: {{ list|random }}.
     {{string_espacada|cut:" "}}
     {{valor|default:"nada havia sido inserido" }}.
@@ -19,7 +17,9 @@
     <div id="gallery">
 
     </div>
-</body>
+{% endblock %}
+
+{% block footer %}
 <style>
     #gallery{
         display: flex;
@@ -37,4 +37,4 @@
     }
 
 </script>
-</html>
+{% endblock %}
