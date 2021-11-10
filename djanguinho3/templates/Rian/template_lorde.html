@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block estilo %}style{% endblock %}
+    <title>{% block titulo %}Álbum{% endblock %}</title>
+</head>
+<body>
+    <h1>Ella Marija Lani Yelich-O'Connor</h1>
+    <p>Esse é o nome real da cantora Lorde. Agora você tem uma informação muito útil, diferentemente do que você está lendo nesse exato minuto, porque tudo isso aqui é inútil e você perdeu seu tempo todo. Sério, para. É sério. PARAAAAA. Para. Obrigado.</p>  
+  
+    {% block content %}
+    Sobre o álbum
+    {% endblock %}
+
+    <h1>Tracklist:</h1>
+    {% block tracklist %}
+    musicas
+    {% endblock %}
+
+    {% include 'Rian/rodape.html' %}
+</body>
+</html>

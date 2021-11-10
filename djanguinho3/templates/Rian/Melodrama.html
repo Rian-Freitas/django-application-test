@@ -1,0 +1,20 @@
+{% extends "Rian/template_lorde.html"%}
+{% load static %}
+
+{% block estilo %}
+    <link rel="stylesheet" type="text/css" href="{% static 'Rian/Melodrama.css' %}">
+{% endblock %}
+{% block titulo %}Melodrama{% endblock %}
+
+{% block content %}
+    <h1>Melodrama</h1>
+    <p>"Melodrama" é o seu segundo álbum de estúdio, lançado em 2017. Possui uma produção intensa, com elementos inspirados no hip-hop e a presença do piano em quase todas as composições. Em "Melodrama", encontra-se uma Lorde mais madura, com reflexões sobre situações passadas de modo a se aceitar e entender o que de fato ocorreu em sua história. O sentimentalismo e o rancor encorpam o álbum. Possui grandes sucessos como "Liability", "Green Light" e "Perfect Places".</p>
+{% endblock %}
+
+{% block tracklist %}
+{% for musica in musicas %}
+    <ul>
+        <li>{{musica}}</li>
+    </ul>
+{% endfor %}
+{% endblock %}

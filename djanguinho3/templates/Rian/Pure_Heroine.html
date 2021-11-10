@@ -1,0 +1,20 @@
+{% extends "Rian/template_lorde.html"%}
+{% load static %}
+
+{% block estilo %}
+    <link rel="stylesheet" type="text/css" href="{% static 'Rian/Pure_Heroine.css' %}">
+{% endblock %}
+{% block titulo %}Pure Heroine{% endblock %}
+
+{% block content %}
+    <h1>Pure Heroine</h1>
+    <p>"Pure Heroine" é o álbum de estreia de Lorde, lançado em 2013. É um álbum caracterizado pela produção intimista e pelas letras que retratam as frustrações, medos e sonhos da adolescência. É o álbum que tem como hit principal "Royals", além de "Ribs" e "Team" como grandes sucessos.</p>
+{% endblock %}
+
+{% block tracklist %}
+{% for musica in musicas %}
+    <ul>
+        <li>{{musica}}</li>
+    </ul>
+{% endfor %}
+{% endblock %}

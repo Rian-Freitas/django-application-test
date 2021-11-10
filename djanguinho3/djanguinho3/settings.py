@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'laguardia',
     'RodrigoPintucci',
     'Projeto_Kayo',
-    'dominique'
+    'dominique',
+    'Rian'
 ]
 
 MIDDLEWARE = [
