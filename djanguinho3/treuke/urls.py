@@ -9,5 +9,6 @@ urlpatterns = [
     path("pontos/", treuke_views.pontos, name="pontos"),
     path("bacon/", treuke_views.bacon, name="bacon"),
     path("redireciona/",treuke_views.redireciona, name="redireciona"),
-    path("special/<int:param>", treuke_views.view_dinamica_int, name="dinamica-int")
+    path("special/<int:param>", treuke_views.view_dinamica_int, name="dinamica-int"),
+    path("templario",treuke_views.templario, name="templario")
 ]

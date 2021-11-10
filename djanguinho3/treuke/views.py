@@ -5,7 +5,7 @@ from django.shortcuts import reverse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("<a href='special'>Special</a><br><a href='pontos'>pontos</a><br><a href='bacon'>bacon</a><br><strong>Coé</strong>")
+    return HttpResponse("<a href='special'>Special</a><br><a href='pontos'>pontos</a><br><a href='bacon'>bacon</a><br><a href='templario'>template</a><br><strong>Coé</strong>")
 
 def redireciona(request):
     url = reverse("bacon")
@@ -32,3 +32,6 @@ def bacon(request):
         "valor":""
     }
     return render(request,"treuke/bacon.html",context)
+
+def templario(request):
+    return render(request,"treuke/templario.html")
