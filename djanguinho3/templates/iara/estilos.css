@@ -7,7 +7,7 @@ body {
     padding-left: 11em;
     font-family: Georgia, "Times New Roman",
           Times, serif;
-    color: rgb(45, 38, 74);
+    color: rgb(31, 25, 55);
     background-color: #abd9ff }
   ul.navbar {
     list-style-type: none;
@@ -28,13 +28,6 @@ h2{
     font-size: 30px;
     width:900px;
 }
-.center{
-    text-align: center;
-    width: 1200px;
-    height: 500px;
-    margin-left: 25px;
-}
-
 
 ul{
     font-size: 20px;
@@ -67,11 +60,6 @@ table{
     width: 800px;
 }
 
-
-#abaixagato{
-     margin-top: 66px;
-}
-
 video{
      text-align: center;
      width:480px; 
@@ -88,8 +76,4 @@ tr, td{
 
 th{
    font-size: 30px;
-}
-
-#invisible{
-    color: rgba(111, 74, 149, 0)
 }
