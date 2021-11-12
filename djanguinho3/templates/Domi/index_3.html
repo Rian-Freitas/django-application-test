@@ -7,6 +7,15 @@
 	
 	<body>
 		<h1>Oi, tudo bem?</h1>
-		<p>Olá, meu nome é {{nome}}.</p>
+		<p>- Olá, meu nome é {{nome}}.</p>
+		<p>- Oi, eu sou {{ lista|random }}.</p>
+		<p>- Muito prazer, tudo bem?</p>
+		<p>- {{ resposta|upper}}</p>
+		{% if resposta == "sim" %}
+			<p>- {{ res1|capfirst }}</p>
+		{% else %}
+			<p>- {{ res2|capfirst }}</p>
+		{% endif %}
+
 	</body>
 </html>
