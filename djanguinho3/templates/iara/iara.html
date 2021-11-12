@@ -1,9 +1,21 @@
 {% extends "iara/iara_template.html"%}
+{%load static}
+
+{% block meta %}
+<title>HTML</title>
+{% endblock %}
+
 
 {% block conteudo %}
     <br>
     <div>
         <strong>Conteúdo: ❤️️</strong>
+
+        <h3>HTML:</h3>
+        {% include "iara/teste2.html" %}
+        <br>
+
     </div>
     <br>
 {% endblock %}
+

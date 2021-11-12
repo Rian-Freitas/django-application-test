@@ -11,6 +11,7 @@
 <body>
     {% include "iara/rodape.html" %}
     
+    {% block conteudo %}
     <p>Bem vindos à minha página estilizada!</p>
 
         <p>Minha página não contém imagens, e não contém conteúdo que te leve
@@ -21,11 +22,6 @@
     <br>
     <p>Definição de Feriado: Período de tempo em que há cessação de trabalho, em que se descansa (diz-se de dia, hora, período etc.)</p>
     <h1>Tenha um ótimo dia, e chame {{nome}} {{nome_familia}} se precisar de algo! </h1>
-
-    {% include "iara/teste2.html" %}
-
-    {% block conteudo %}
-        <p>Nenhum conteúdo</p>
     {% endblock %}
 </body>
 </html>
