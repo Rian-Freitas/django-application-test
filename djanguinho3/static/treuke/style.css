@@ -1,3 +1,6 @@
+body,header{
+    font-family: Arial, sans-serif;
+}
 header{
     height: 75px;
     width: 100%;
@@ -13,7 +16,6 @@ header{
     margin-bottom: 10px;
     color: snow;
     font-weight: bold;
-    font-family: Arial, sans-serif;
     display: flex;
     align-items: center;
 }

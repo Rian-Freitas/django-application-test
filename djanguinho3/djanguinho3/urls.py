@@ -21,7 +21,7 @@ from djanguinho3 import views
   
 urlpatterns = [
 	path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon.ico'))),
-    path('', views.index, name="index"),
+    path('', views.index, name="root-index"),
     path(r'laguardia/', include('laguardia.urls')),
     path(r"RodrigoPintucci/", include("RodrigoPintucci.urls")), #proibido mudar
     path(r"treuke/",include("treuke.urls")),
