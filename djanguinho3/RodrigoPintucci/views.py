@@ -3,7 +3,7 @@ from django.shortcuts import render, reverse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("<strong>Testando</strong>")
+    return render(request,"RodrigoPintucci/RPindex.html")
 
 def special(request):
     context = {
@@ -22,7 +22,7 @@ def cookie_din(request, param):
     if param == "acabou":
         return HttpResponse("<strong>VOCÊ COMEU TUDO!!</strong>")
     else:
-        return HttpResponseNotFound("<strong>Creio que se enganou, caro amigo.</strong>")
+        raise Http404()
 
 def redireciona(request):
     url_redirecionamento = reverse("cookie_din", args=["acabou"])
@@ -34,10 +34,12 @@ def cookintucci(request):
         "nome_familia":"Pintucci"
     }
     return render(request,"RodrigoPintucci/cookieborgar2.html", context)
-    
+
 def ferias_din(request, param):
     if param == "criptografia":
         context = {"crypto" : ['a -> r', 'b -> n','c -> o', 'd -> a', 'e -> h', 'f -> s', 'g -> t', 'h -> e', 'i -> l', 'j -> d', 'k -> v', 'l -> c'],
         "segredo":"redacted",
         "mensagem": "bdc cieh dgadf jh kclh"}
-        return render(request,"RodrigoPintucci/criptografia.html", context)    
+        return render(request,"RodrigoPintucci/criptografia.html", context)   
+    else:
+        raise Http404() 

@@ -1,0 +1,21 @@
+{% extends "RodrigoPintucci/pintuccitemplate.html" %} 
+{% load static %}
+
+{% block cabeçalho %}
+    <title>Index</title>
+    <link rel="icon" href={% static "RodrigoPintucci/img/cookieburger.png" %}>
+{% endblock %}
+{% block estilo %}
+    <link rel="stylesheet" type="text/css" href="{% static 'RodrigoPintucci/style2.css' %}">
+{% endblock %}
+
+{% block conteudo %}
+<h1>Atalhos para navegação:</h2>
+<ul class="nav">
+    <li><a href='special'>Tabby</a></li>
+    <li><a href='ferias'>Ferias</a></li>
+    <li><a href='cookie'>Cookie</a></li>
+</ul>
+{% endblock %}
+
+{% include "RodrigoPintucci/finalzin.html" %}
