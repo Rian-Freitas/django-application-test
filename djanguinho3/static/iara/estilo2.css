@@ -3,9 +3,33 @@
     padding: 15px;
 }
 
+.button {
+    border: none;
+    color: rgb(33, 17, 98);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .button1 {
+    background-color: rgb(175, 175, 219);
+    color: black;
+    border: 2px solid #000000;
+  }
+  
+  .button1:hover {
+    background-color: #6b86ff;
+    color: white;
+  }
+  
 body {
-    background-image: linear-gradient(to bottom right, #a2bcfa, #c599b2);
-    color:rgb(34, 27, 34);
+    background-color: #91bef1;
+    color:rgb(46, 31, 31);
     font-family: Georgia, "Times New Roman"}
   ul.navbar {
     list-style-type: none;
@@ -57,7 +81,7 @@ div{
     width: 1000px;
     height: 200px;
     margin-bottom: 100px;
-    background-color: rgb(239, 222, 255);
+    background-color: rgb(204, 220, 255);
 }
 
 p{
