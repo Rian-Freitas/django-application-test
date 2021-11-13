@@ -5,9 +5,10 @@
 {% block cabeçalho %}
     <title>Nhami nhami</title>
     <link rel="icon" href={% static "RodrigoPintucci/img/cookieburger.png" %}>
+    {% endblock %}
+{% block estilo %}
     <link rel="stylesheet" type="text/css" href="{% static 'RodrigoPintucci/cookie.css' %}">
 {% endblock %}
-{% block estilo %}{% endblock %}
 
 {% block conteudo %}
     <h1>Para você, o cookie 🍪</h1>
