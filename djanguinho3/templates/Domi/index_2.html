@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-	<head>
-		<meta charset "UTF-8" />
-		<title>Index</title>
-	</head>
-	
-	<body>
-		<h1>História incrível</h1>
-		<p>Uma história incrível.</p>
-	</body>
-</html>
+{% extends "Domi/template_domi.html" %}
+{% load static %}
+
+{% block cabecalho %}
+	<title>Index_2</title>
+{% endblock %}
+
+{% block estilo %}
+	<link rel="stylesheet" href="{% static 'Domi/styles.css'%}">
+{% endblock %}
+
+{% block conteudo %}
+	<h1>História incrível</h1>
+	<p>Uma história incrível.</p>
+{% endblock %}

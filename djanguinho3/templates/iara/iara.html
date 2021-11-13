@@ -1,0 +1,23 @@
+{% extends "iara/iara_template.html"%}
+{%load static}
+
+{% block meta %}
+<title>HTML</title>
+{% endblock %}
+
+
+{% block conteudo %}
+    <br>
+    <div>
+        <strong>Conteúdo: ❤️️</strong>
+
+        <h3>HTML:</h3>
+        <a href="http://127.0.0.1:8000/iara/caraoucoroa">Cara ou Coroa Generator</a>
+
+        {% include "iara/teste2.html" %}
+        <br>
+
+    </div>
+    <br>
+{% endblock %}
+

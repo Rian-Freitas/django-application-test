@@ -1,0 +1,20 @@
+{% extends "Rian/template_lorde.html"%}
+{% load static %}
+
+{% block estilo %}
+    <link rel="stylesheet" type="text/css" href="{% static 'Rian/Solar_Power.css' %}">
+{% endblock %}
+{% block titulo %}Solar Power{% endblock %}
+
+{% block content %}
+    <h1>Solar Power</h1>
+    <p>"Solar Power" é seu terceiro álbum, lançado em 2021. Em completo contraste com seus dois álbuns anteriores, apresenta-se, em "Solar Power", uma produção orgânica e simples, fazendo muito uso de violão, guitarra (Fender Jaguar) e bateria. Lorde traz em seu terceiro álbum a ambiência de sua terra natal, a Nova Zelândia, e mostra como a vida simples e natural é muito melhor para ela do que a pressão da Califórnia. "Don't want that California love."</p>
+{% endblock %}
+
+{% block tracklist %}
+{% for musica in musicas %}
+    <ul>
+        <li>{{musica}}</li>
+    </ul>
+{% endfor %}
+{% endblock %}

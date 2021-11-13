@@ -25,6 +25,7 @@ urlpatterns = [
     path(r'laguardia/', include('laguardia.urls')),
     path(r"RodrigoPintucci/", include("RodrigoPintucci.urls")), #proibido mudar
     path(r"treuke/",include("treuke.urls")),
+    path(r"Rian/", include("Rian.urls")),
     path(r"kayo/", include("Projeto_Kayo.urls")),
     path(r"dominique/", include("dominique.urls")),
     path(r"iara/", include("iara.urls")),

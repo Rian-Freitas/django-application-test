@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Férias</title>
+    {% block meta %}
+    <title>HTML</title>
+    {% endblock %}
 </head>
 <body>
+    {% include "iara/rodape.html" %}
+    
+    {% block conteudo %}
     <p>Bem vindos à minha página estilizada!</p>
 
         <p>Minha página não contém imagens, e não contém conteúdo que te leve
@@ -17,5 +22,6 @@
     <br>
     <p>Definição de Feriado: Período de tempo em que há cessação de trabalho, em que se descansa (diz-se de dia, hora, período etc.)</p>
     <h1>Tenha um ótimo dia, e chame {{nome}} {{nome_familia}} se precisar de algo! </h1>
+    {% endblock %}
 </body>
 </html>

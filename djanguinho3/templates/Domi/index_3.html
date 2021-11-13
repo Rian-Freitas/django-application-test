@@ -1,12 +1,23 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-	<head>
-		<meta charset "UTF-8" />
-		<title>Index</title>
-	</head>
-	
-	<body>
-		<h1 style="color:Red;">História incrível em vermelho</h1>
-		<p style="color:Blue;">Uma história incrível em azul.</p>
-	</body>
-</html>
+{% extends "Domi/template_domi.html" %}
+{% load static %}
+
+{% block cabecalho %}
+	<title>Index_3</title>
+{% endblock %}
+
+{% block estilo %}
+	<link rel="stylesheet" href="{% static 'Domi/styles.css'%}">
+{% endblock %}
+
+{% block conteudo %}
+	<h1>Oi, tudo bem?</h1>
+	<p>- Olá, meu nome é {{nome}}.</p>
+	<p>- Oi, eu sou {{ lista|random }}.</p>
+	<p>- Muito prazer, tudo bem?</p>
+	<p>- {{ resposta|upper}}</p>
+	{% if resposta == "sim" %}
+		<p>- {{ res1|capfirst }}</p>
+	{% else %}
+		<p>- {{ res2|capfirst }}</p>
+	{% endif %}
+{% endblock %}

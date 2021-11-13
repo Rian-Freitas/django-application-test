@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ralouin</title>
 </head>
+{% load static %}
+{% block estilo %}
+    <link rel="stylesheet" type="text/css" href="{% static 'iara/estilo.css' %}">
+{% endblock %}
 <body>
-    <h3>Definição de Halloween:</h3>
-    <br>
-    <p>Halloween, ou Dia das Bruxas, é uma celebração popular de culto aos mortos comemorada anualmente no dia 31 de outubro.</p>
+    <h4>Definição de Halloween: Halloween, ou Dia das Bruxas, é uma celebração popular de culto aos mortos comemorada anualmente no dia 31 de outubro.</h4>
 </body>
 </html>
