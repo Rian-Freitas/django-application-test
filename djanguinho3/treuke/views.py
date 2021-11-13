@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from django.shortcuts import reverse
@@ -16,6 +16,8 @@ def view_dinamica_int(request,param):
         return HttpResponse("<strong>ALO</strong>")
     elif param == 1:
         return HttpResponse("<strong>ALO2</strong>")
+    else:
+        raise Http404()
 
 
 def special(request):
