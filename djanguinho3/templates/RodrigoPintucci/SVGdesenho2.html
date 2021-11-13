@@ -1,9 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link href="svgcss.css" rel="stylesheet"/>
-</head>
-<body>
+{% extends "RodrigoPintucci/pintuccitemplate.html" %} 
+{% load static %}
+{% block cabeçalho %}
+    <meta charset ="UTF-8"/>
+    <title>Tabby!</title>
+    <link rel="icon" href={% static "RodrigoPintucci/img/tabbyena3.png" %}>
+{% endblock %}
+{% block estilo %}
+    <link rel="stylesheet" type="text/css" href="{% static 'RodrigoPintucci/svgcss.css' %}">
+{% endblock %}
+{% block conteudo %}
 <?xml version="1.0"?>
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000px" height="1000px">
     <!--Fundo-->
@@ -60,13 +65,32 @@
             <g id="skin2">
                 <!--Skin cabeça 2-->
                 <rect x="400" y="200" width="200" height="200" rx="80" ry="80" fill="#000000" />
-                <image x="420" y="280" href="eyegif.gif" height="70" width="110"/>
-                <image x="495" y="280" href="eyegif.gif" height="70" width="110"/>
+                <image x="420" y="280" href={% static "RodrigoPintucci/img/eyegif.gif" %} height="70" width="110"/>
+                <image x="495" y="280" href={% static "RodrigoPintucci/img/eyegif.gif" %} height="70" width="110"/>
+            </g>
+            <g id="skin3">
+                <!--Skin cabeça 3-->
+                <rect x="400" y="200" width="200" height="200" rx="80" ry="80" fill="white" />
+                <image x="420" y="275" href={% static "RodrigoPintucci/img/sans.png" %} height="110" width="190"/>
+            </g>
+            <g id="skin4">
+                <!--Skin cabeça 4-->
+                <defs>
+                    <rect id="rect" x="400" y="200" width="200" height="200" rx="80" ry="80"/>
+                    <clipPath id="clip">
+                      <use xlink:href="#rect"/>
+                    </clipPath>
+                  </defs>
+                
+                  <use xlink:href="#rect"/>
+                  <image xlink:href={% static "RodrigoPintucci/img/tvstatic.gif" %} x="300" y="170" width="30%" height="30%" clip-path="url(#clip)"/>
             </g>
             <g id="skin0">
                 <!--Cabeça-->
                 <rect x="400" y="200" width="200" height="200" rx="80" ry="80" style="stroke: #fff4df; fill: #fff4df;" />
             </g>
+
+
             <!--Mechas-->
             <rect x="0" y="0" width="140" height="60" rx="10" fill="#c8bfe7"  transform="translate(370 260) rotate(-40)" />
             <rect x="0" y="0" width="140" height="70" rx="10" fill="#c8bfe7"  transform="translate(470 283) rotate(-80)" />
@@ -100,25 +124,32 @@
                 <rect x="0" y="0" width="60" height="18" rx="10" fill="#92a5de" transform="translate(759 590)"/>
                 <circle cx="789" cy="600" r="12" fill="#e8ce38"  />
             </g>
-            <g id="tela2" visibility="hidden">
+            <g id="tela2">
                 <!--Tela 2-->
-                <rect x="0" y="0" width="220" height="160" rx="6" fill="#000000" transform="translate(630 550)"/>
-                <image x="635" y="530" href="eyegif.gif" height="200" width="200"/>
+                <defs>
+                    <rect id="rect2" x="630" y="550" width="220" height="160" rx="6"/>
+                    <clipPath id="clip2">
+                      <use xlink:href="#rect2"/>
+                    </clipPath>
+                  </defs>
+                
+                  <use xlink:href="#rect2"/>
+                  <image xlink:href={% static "RodrigoPintucci/img/eyegif.gif" %} x="585" y= "480" width="300" height="300" clip-path="url(#clip2)"/>
             </g>
-            <g id="tela3" visibility="hidden">
+            <g id="tela3">
                 <!--Tela 3-->
                 <rect x="0" y="0" width="220" height="160" rx="6" fill="#b0d4ce" transform="translate(630 550)"/>
                 <rect x="0" y="0" width="80" height="10" rx="3" fill="#d494c3" transform="translate(700 680)"/>
                 <circle class="bolinha" cx="740" cy="675" r="5" fill="#d494c3"  />
                 <rect class="barrinha" x="700" y="570" width="80" height="10" rx="3" fill="#d494c3"/>
             </g>
-            <g id="tela4" visibility="hidden">
+            <g id="tela4">
                 <!--Tela 4-->
                 <rect x="0" y="0" width="220" height="160" rx="6" fill="#0000FF" transform="translate(630 550)"/>
                 <text x="0" y="0" fill="white" transform="translate(660 600) scale(2)" font-family="sans-serif">:(</text>
                 <text x="0" y="0" fill="white" transform="translate(660 650) scale(2)" font-family="sans-serif">ERROR</text>
             </g>
-            <g id="tela0" visibility="hidden">
+            <g id="tela0">
                 <!--Tela 0-->
                 <rect x="0" y="0" width="220" height="160" rx="6" fill="#ffffff" transform="translate(630 550)" />
             </g>
@@ -188,7 +219,7 @@
 
 
 </svg>
+    <script type="text/javascript" src="{% static 'RodrigoPintucci/svgjs.js' %}"></script>
+{% endblock %}
 
-<script type="text/javascript" src="svgjs"></script>
-</body>
-</html>
+{% include "RodrigoPintucci/finalzin.html" %}

@@ -34,9 +34,10 @@ def cookintucci(request):
         "nome_familia":"Pintucci"
     }
     return render(request,"RodrigoPintucci/cookieborgar2.html", context)
-
-def criptografia(request):
-    context = {"crypto" : ['a -> r', 'b -> n','c -> o', 'd -> a', 'e -> h', 'f -> s', 'g -> t', 'h -> e', 'i -> l', 'j -> d', 'k -> v', 'l -> c'],
-    "segredo":"redacted",
-    "mensagem": "bdc cieh dgadf jh kclh"}
-    return render(request,"RodrigoPintucci/criptografia.html", context)    
+    
+def ferias_din(request, param):
+    if param == "criptografia":
+        context = {"crypto" : ['a -> r', 'b -> n','c -> o', 'd -> a', 'e -> h', 'f -> s', 'g -> t', 'h -> e', 'i -> l', 'j -> d', 'k -> v', 'l -> c'],
+        "segredo":"redacted",
+        "mensagem": "bdc cieh dgadf jh kclh"}
+        return render(request,"RodrigoPintucci/criptografia.html", context)    

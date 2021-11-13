@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+{% extends "RodrigoPintucci/pintuccitemplate.html" %} 
+{% load static %}
+{% block cabeçalho %}
     <meta charset ="UTF-8"/>
-    <head>
-        <title>As férias mais emocionantes!</title>
-        <link href="style2.css" rel="stylesheet"/>
-    </head>
-    <body>
+    <title>As férias mais emocionantes!</title>
+    <link rel="icon" href={% static "RodrigoPintucci/img/tabbyena3.png" %}>
+{% endblock %}
+{% block estilo %}
+<link rel="stylesheet" type="text/css" href="{% static 'RodrigoPintucci/style2.css' %}">
+{% endblock %}
+
+{% block conteudo %}
         <article> 
             <header>
                 <h1>Como utilizei minhas férias da melhor maneira possível!</h1>
             </header>
             <main>
                 <p>Doritos é salgadinho, não biscoito.</p>
-                <img class="direita2" src="img/ferias1.png"/ alt="Férias parte 1">
+                <img class="direita2" src={% static "RodrigoPintucci/img/ferias1.png" %}  alt="Férias parte 1">
                 <div class="esquerda">
                 <h2>Joguei o jogo que eu estava esperando!</h2>
                 <ul>
@@ -21,7 +25,7 @@
                 </ul>
                 </div>
                 
-                <img class="esquerda2" src="img/ferias2.png"/ alt="Férias parte 2">
+                <img class="esquerda2" src={% static "RodrigoPintucci/img/ferias2.png" %} alt="Férias parte 2">
                 <div class="direita">
                 <h2>Refiz um trabalho da faculdade!</h2>
                 <ul>
@@ -29,8 +33,8 @@
                     <li>Tivemos nota máxima pelo esforço. The good ending.</li>
                 </ul>
                 </div>
-
-                <img class="direita2" src="img/ferias3.png"/ alt="Férias parte 3">
+        
+                <img class="direita2" src={% static "RodrigoPintucci/img/ferias3.png" %} alt="Férias parte 3">
                 <div class="esquerda">
                 <h2>Pensei em estudar cálculo!</h4>
                 <ul>
@@ -38,9 +42,9 @@
                    <li>Não o fiz.</li>
                 </ul>
                 </div>
-
-     
-                <img class="esquerda2" src="img/ferias4.png"/ alt="Férias parte 4">
+        
+        
+                <img class="esquerda2" src={% static "RodrigoPintucci/img/ferias4.png" %} alt="Férias parte 4">
                 <div class="direita">
                 <h2>Fiz alguns avanços quanto à minha página de desenhos!</h4>
                 <ul>
@@ -48,8 +52,8 @@
                     <li>Cheguei em 420 seguidores. Esse número é engraçado.</li>
                 </ul>
                 </div>
-
-                <img class="direita2" src="img/ferias5.png"/ alt="Férias parte 5">
+        
+                <img class="direita2" src={% static "RodrigoPintucci/img/ferias5.png" %} alt="Férias parte 5">
                 <div class="esquerda">
                 <h2>Assisti desenho!</h4>
                 <ul>
@@ -57,8 +61,8 @@
                     <li>Assistam The Owl House. É muito bom. Sério.</li>
                 </ul>
                 </div>
-
-                <img class="esquerda2" src="img/ferias6.png"/ alt="Férias parte 6">
+        
+                <img class="esquerda2" src={% static "RodrigoPintucci/img/ferias6.png" %} alt="Férias parte 6">
                 <div class="direita">
                 <h2>Fiz um brownie-cookie!</h4>
                 <ul>
@@ -66,8 +70,8 @@
                     <li>Não tão bom quanto meu primeiro brownie-cookie. Mas ainda assim bom.</li>
                 </ul>
                 </div>
-
-                <img class="direita2" src="img/ferias7.png"/ alt="Férias parte 7">
+        
+                <img class="direita2" src={% static "RodrigoPintucci/img/ferias7.png" %} alt="Férias parte 7">
                 <div class="esquerda">
                 <h2>Passei por um aniversário!</h4>
                 <ul>
@@ -79,7 +83,7 @@
                 <p>Não, esse tom de roxo não é proveniente do sprite em 8-bits do Purple Guy no minigame Save Them do jogo Five Nights At Freddy's 2. É simplesmente um tom de roxo padrão chamado RebeccaPurple.</p>
             </main>
         </article>
-  
+        
         <div class="center">
         <h4 id="center3">Resumindo...</h4>
         <table id="center2">
@@ -119,21 +123,22 @@
                 <td>Número de Easter Eggs</td>
                 <td>3</td>
             </tr>
-
+        
         </table> 
         </div>
-
+        
         <div class="center">
-        <img class="esquerda2" id="abaixagato" src="img/gatotransparente2.gif"/ alt="Gato gif">
+        <img class="esquerda2" id="abaixagato" src={% static "RodrigoPintucci/img/gatotransparente2.gif" %} alt="Gato gif">
         <h4>Como foram minhas férias:</h4>
         <video controls>
-        <source src="img/cutecat.mp4" type="video/mp4">
-Your browser does not support the video tag.
+        <source src={% static "RodrigoPintucci/img/cutecat.mp4" %} type="video/mp4">
+        Your browser does not support the video tag.
         </video>
-        <img class="direita2" src="img/gatotransparente1.gif"/ alt="Gato gif">
+        <img class="direita2" src={% static "RodrigoPintucci/img/gatotransparente1.gif" %} alt="Gato gif">
         </div>
-
-
+        
+        <a href="criptografia">Shhh não clique aqui!!</a>
         <footer>Artes feitas por minha pessoa, Rodrigo Gomes Hutz Pintucci, no melhor aplicativo, o Paint.</footer>
-    </body>
-</html>
+{% endblock %}
+
+{% include "RodrigoPintucci/finalzin.html" %}

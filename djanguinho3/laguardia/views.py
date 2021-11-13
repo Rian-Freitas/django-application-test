@@ -9,8 +9,15 @@ def redireciona(request):
     raise Http404()
 
 def index(request):
-    return HttpResponse("<h1>🦇Mwhaha! Seja bem-vindo a minha página mal assombrada!🦇</h1>\
-    <br>Procure por personagens de halloween no link.🎃")
+    return HttpResponse("""<h1>🦇Mwhaha! Seja bem-vindo a minha página mal assombrada!🦇</h1><br>
+    <br>
+    <h2>Páginas disponíveis:</h2> <br>
+    <a href="dracula">Drácula</a> <br>
+    <a href="fantasma">Fantasma</a> <br>
+    <a href="mumia">Múmia</a> <br>
+    <a href="custom/frase1/frase2">Custom</a> <br>
+    <a href="trickortreat">Trick or Treat</a> <br>
+    """)
 
 def trickortreat(request):
     context = {"possib" : ['🍬 você achou um doce :D', '😈 você foi trickado >:D haha']}
