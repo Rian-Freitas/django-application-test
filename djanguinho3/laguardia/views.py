@@ -1,9 +1,12 @@
 from django.shortcuts import render, reverse
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 
 def redireciona(request):
     url = reverse("trickortreat")
-    return HttpResponseRedirect(url)
+    #return HttpResponseRedirect(url)
+
+    #agora o redireciona vai dar erro 404
+    raise Http404()
 
 def index(request):
     return HttpResponse("<h1>🦇Mwhaha! Seja bem-vindo a minha página mal assombrada!🦇</h1>\
@@ -23,10 +26,10 @@ def mumia(request):
 def fantasma(request):
     return render(request, "laguardia/fantasma.html")
 
-def custom(request):
+def custom(request, frase1, frase2):
     context = {"criatura": "👾",
-                "frase1": "~Digite aqui a frase principal~",
-                "frase2": "~Digite aqui a frase secundária~",
+                "frase1": frase1.replace("_", " "),
+                "frase2": frase2.replace("_", " "),
                 "atributos": ["Força: 5", "Inteligência: 7", "Destreza: 2", "Lábia: 4", "Velocidade: 3"]}
 
     return render(request, "laguardia/custom.html", context)

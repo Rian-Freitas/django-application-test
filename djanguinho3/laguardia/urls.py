@@ -7,7 +7,7 @@ urlpatterns = [
     path("dracula", views.dracula, name="dracula"),
     path("mumia", views.mumia, name="mumia"),
     path("fantasma", views.fantasma, name="gasparzinho"),
-    path("custom", views.custom, name="custom"),
+    path("custom/<str:frase1>/<str:frase2>", views.custom, name="custom"),
     path("trickortreat", views.trickortreat, name="trickortreat"),
     path("naosei", views.redireciona, name="redirecionado")
 ]
