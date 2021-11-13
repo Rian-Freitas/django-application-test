@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-	<head>
-		<meta charset "UTF-8" />
-		<title>Index</title>
-	</head>
-	
-	<body>
-		<p>Alguma coisa legal.</p>
-	</body>
-</html>
+{% extends "Domi/template_domi.html" %}
+{% load static %}
+
+{% block cabecalho %}
+	<title>Index</title>
+{% endblock %}
+
+{% block estilo %}
+	<link rel="stylesheet" href="{% static 'Domi/styles.css'%}">
+{% endblock %}
+
+{% block conteudo %}
+	<p>Alguma coisa legal.</p>
+{% endblock %}

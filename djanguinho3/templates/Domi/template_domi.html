@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		{% block cabecalho %}
+			<title>Título</title>
+		{% endblock %}
+		{% block estilo %}{% endblock %}
+	</head>
+	{% include "Domi/header.html" %}
+	<body>
+		{% block conteudo %}
+			<p>Conteúdo Padrão<p>
+		{% endblock %}
+
+	</body>
+</html>
