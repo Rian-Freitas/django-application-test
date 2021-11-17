@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {% include "iara/rodape.html" %}
-    {% block meta %}
-    <title>Cara ou Coroa</title>
-    {% endblock %}
-</head>
+{% extends "iara/iara_template.html"%}
 
 {% load static %}
 {% block estilo %}
     <link rel="stylesheet" type="text/css" href="{% static 'iara/estilo2.css' %}">
 {% endblock %}
 
-<body>
-    {% block conteudo %}
+{% block meta %}<h3>Cara ou Coroa</h3>{% endblock %}
+
+{% block conteudo %}
     <div>
     <p><h3>{{ possib|random }}</h3></p>
 
     <button class="button button1"><a href="http://127.0.0.1:8000/iara/caraoucoroa">Tente Outra Vez</a></button>
     </div>
-    {% endblock %}
-</body>
-</html>
+{% endblock %}

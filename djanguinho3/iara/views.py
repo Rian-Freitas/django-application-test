@@ -1,10 +1,13 @@
 from django.http.response import HttpResponseNotFound
 from django.http.response import Http404
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 from django.http import HttpResponse
 
 def index(request):
     return render(request, "iara/iara.html")
+
+def error(request):
+    raise Http404()
 
 def special(request):
     context = {
@@ -24,13 +27,14 @@ def view_dinamica_int(request, param):
         raise Http404()
 
 
-def special_2(request):
-    return render(request,"iara/teste2.html")
-
-def special_3(request):
-    return render(request,"iara/iara_template.html")
+def halloween(request):
+    return render(request,"iara/halloween.html")
 
 def caraoucoroa(request):
     context = {"possib" : ['Cara', 'Coroa']}
     return render(request, "iara/caracoroa.html", context)
+
+def frasemotivacional(request):
+    return render(request,"iara/frasemotivacional.html")
+
 # Create your views here.
