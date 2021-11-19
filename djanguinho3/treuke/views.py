@@ -35,5 +35,12 @@ def bacon(request):
     }
     return render(request,"treuke/bacon.html",context)
 
+from treuke.models import Bacon
+
+def registrarBacon(request, name, gostosura):
+    bacon = Bacon(name=name, gostosura=gostosura)
+    bacon.save()
+    return HttpResponse("Nome: "+name+" - Gostusura: "+str(gostosura))
+
 def templario(request):
     return render(request,"treuke/templario.html")

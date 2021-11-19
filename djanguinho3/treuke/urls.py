@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from treuke import views as treuke_views
+import treuke
 
 
 urlpatterns = [
@@ -10,5 +11,6 @@ urlpatterns = [
     path("bacon/", treuke_views.bacon, name="bacon"),
     path("redireciona/",treuke_views.redireciona, name="redireciona"),
     path("special/<int:param>", treuke_views.view_dinamica_int, name="dinamica-int"),
-    path("templario",treuke_views.templario, name="templario")
+    path("templario",treuke_views.templario, name="templario"),
+    path("registrarBacon/<str:name>/<int:gostosura>", treuke_views.registrarBacon, name="bacon-registration")
 ]
